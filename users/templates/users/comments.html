@@ -1,0 +1,22 @@
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <br>
+    <div class="container bg-light shadow-md p-5 form-layout">
+        <h5>Post Comment</h5>
+        <hr>
+        <br>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <button type='submit' class='btn btn-primary w-100 btn-block p-2'>Post</button>
+        </form>
+        <br>
+        <div class="text-center">
+            <p>You're gay</p>
+        </div>
+    </div>
+    <br>
+{% endblock %}

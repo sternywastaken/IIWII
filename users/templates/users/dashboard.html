@@ -1,0 +1,27 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+    <br>
+    <div class='text-center'>
+        <h3>Signed in as {{request.user}}</h3>
+    </div>
+    <br>
+    {% for post in posts %}
+        <div class="text-center">
+            <br>
+            <br>
+            <a href="{% url 'view-post' post.id %}"><h4>{{post.title}}</h4></a>
+            <hr>
+            {{post.content}}
+            <br>
+            <br>
+            <br>
+        </div>
+        <a href="{% url 'delete-post' post.id %}"><button type='submit' class='btn btn-primary w-100 btn-block p-2'>Delete</button></a>
+        <hr>
+        <br><br>
+    {% endfor %}
+    <hr>
+    <br>
+    <a href="{% url 'user-post' %}"><button type='submit' class='btn btn-primary w-100 btn-block p-2'>Create Post</button></a>
+{% endblock %}

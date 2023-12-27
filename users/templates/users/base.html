@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>I see red</title>
+        <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+        <!--<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">-->
+    </head>
+    <body>
+        {% include 'users/navbar.html' %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
